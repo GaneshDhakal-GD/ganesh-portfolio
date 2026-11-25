@@ -1,0 +1,470 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ganesh Dhakal - BCA Student, Programmer and Technology Enthusiast">
+  <title>Ganesh Dhakal | Personal Portfolio</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --bg: #08111f;
+      --card: #101d30;
+      --blue: #38bdf8;
+      --white: #f1f5f9;
+      --muted: #a5b4c7;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--white);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: 88%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(8, 17, 31, 0.95);
+      border-bottom: 1px solid #203047;
+    }
+
+    nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: var(--blue);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      padding: 70px 0;
+    }
+
+    .hero-content {
+      max-width: 750px;
+    }
+
+    .tag {
+      color: var(--blue);
+      font-weight: bold;
+      letter-spacing: 2px;
+      font-size: 13px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 7vw, 70px);
+      line-height: 1.15;
+      margin: 18px 0;
+    }
+
+    h1 span {
+      color: var(--blue);
+    }
+
+    .hero p, .section-description {
+      color: var(--muted);
+      max-width: 650px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .btn {
+      padding: 12px 23px;
+      border-radius: 7px;
+      font-weight: bold;
+      display: inline-block;
+      transition: 0.3s;
+    }
+
+    .primary {
+      background: var(--blue);
+      color: #06111f;
+    }
+
+    .secondary {
+      border: 1px solid var(--blue);
+      color: var(--blue);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    section {
+      padding: 85px 0;
+    }
+
+    .section-title {
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    .section-title span {
+      color: var(--blue);
+    }
+
+    .section-description {
+      margin-bottom: 35px;
+    }
+
+    .about-box, .card {
+      background: var(--card);
+      border: 1px solid #203047;
+      border-radius: 13px;
+      padding: 27px;
+    }
+
+    .about-box p {
+      color: var(--muted);
+    }
+
+    .skills-grid, .hobby-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: var(--blue);
+    }
+
+    .card h3 {
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .level {
+      display: inline-block;
+      color: var(--blue);
+      background: #0b2940;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      margin-top: 12px;
+    }
+
+    .contact-box {
+      text-align: center;
+      background: var(--card);
+      border: 1px solid #203047;
+      border-radius: 15px;
+      padding: 40px 20px;
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      margin: 12px auto 25px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      border-top: 1px solid #203047;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .menu-btn {
+      display: none;
+      background: none;
+      color: white;
+      border: none;
+      font-size: 27px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 700px) {
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        background: #101d30;
+        flex-direction: column;
+        padding: 20px 6%;
+        gap: 15px;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hero {
+        min-height: 75vh;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <nav class="container">
+      <a href="#" class="logo">Ganesh<span>.</span></a>
+
+      <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" onclick="closeMenu()">Home</a></li>
+        <li><a href="#about" onclick="closeMenu()">About</a></li>
+        <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
+        <li><a href="#interests" onclick="closeMenu()">Interests</a></li>
+        <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Home -->
+  <section class="hero container" id="home">
+    <div class="hero-content">
+      <div class="tag">WELCOME TO MY PERSONAL PORTFOLIO</div>
+
+      <h1>Hi, I'm <span>Ganesh Dhakal</span></h1>
+
+      <h2>BCA Student | Programmer | Technology Enthusiast</h2>
+
+      <p>
+        I am passionate about programming, technology and continuous learning.
+        I enjoy exploring new ideas, improving my skills and discovering
+        what the world of IT has to offer.
+      </p>
+
+      <div class="buttons">
+        <a href="#about" class="btn primary">Discover More</a>
+        <a href="#contact" class="btn secondary">Contact Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About <span>Me</span></h2>
+      <p class="section-description">A little introduction about myself.</p>
+
+      <div class="about-box">
+        <p>
+          Hello! I am Ganesh Dhakal, a Bachelor of Computer Applications
+          (BCA) student from Syangja, currently studying in Kathmandu, Nepal.
+          I am interested in programming, information technology and
+          emerging technologies.
+          <br><br>
+          I have good knowledge of C programming and Microsoft Office,
+          along with confidence in communication. I am continuously
+          developing my web development skills and exploring new areas
+          of technology, especially Artificial Intelligence.
+          <br><br>
+          My goal is to keep learning, gain practical experience and
+          discover opportunities in the IT field.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">My <span>Skills</span></h2>
+      <p class="section-description">
+        My current abilities and areas I am developing.
+      </p>
+
+      <div class="skills-grid">
+
+        <div class="card">
+          <h3>C Programming</h3>
+          <p>Good understanding of C programming and its concepts.</p>
+          <span class="level">Good</span>
+        </div>
+
+        <div class="card">
+          <h3>Microsoft Office</h3>
+          <p>Good working knowledge of Microsoft Office tools.</p>
+          <span class="level">Good</span>
+        </div>
+
+        <div class="card">
+          <h3>Communication</h3>
+          <p>Confident in communicating and sharing ideas with others.</p>
+          <span class="level">Confident</span>
+        </div>
+
+        <div class="card">
+          <h3>HTML, CSS & JavaScript</h3>
+          <p>Building my web development knowledge step by step.</p>
+          <span class="level">Learning</span>
+        </div>
+
+        <div class="card">
+          <h3>Git & GitHub</h3>
+          <p>Learning version control and project management.</p>
+          <span class="level">Learning</span>
+        </div>
+
+        <div class="card">
+          <h3>Graphic Design</h3>
+          <p>Interested in learning visual design and creative tools.</p>
+          <span class="level">Interested in Learning</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Interests -->
+  <section id="interests">
+    <div class="container">
+      <h2 class="section-title">My <span>Interests & Hobbies</span></h2>
+      <p class="section-description">
+        Things I enjoy and topics I love exploring.
+      </p>
+
+      <div class="hobby-grid">
+
+        <div class="card">
+          <h3>⚽ Playing Football</h3>
+          <p>I enjoy playing football and staying active.</p>
+        </div>
+
+        <div class="card">
+          <h3>🌍 Exploring New Places</h3>
+          <p>I love visiting random and unfamiliar places and discovering new experiences.</p>
+        </div>
+
+        <div class="card">
+          <h3>🤖 Artificial Intelligence</h3>
+          <p>I am interested in exploring AI and understanding how new technologies work.</p>
+        </div>
+
+        <div class="card">
+          <h3>💻 Technology</h3>
+          <p>I enjoy learning about new technologies and developments in IT.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-box">
+        <h2 class="section-title">Let's <span>Connect</span></h2>
+
+        <p>
+          Feel free to connect with me for discussions,
+          ideas or learning opportunities.
+        </p>
+
+        <!-- Replace this email with your real email -->
+        <a href="mailto:your-email@gmail.com" class="btn primary">
+          Send Me an Email
+        </a>
+
+        <div class="buttons" style="justify-content:center">
+          <!-- Replace with your GitHub profile link -->
+          <a href="https://github.com/yourusername"
+             target="_blank" class="btn secondary">
+            GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© <span id="year"></span> Ganesh Dhakal. All Rights Reserved.</p>
+    <p>Designed with curiosity and passion for technology.</p>
+  </footer>
+
+  <script>
+    // Mobile navigation
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+
+    function closeMenu() {
+      document.getElementById("navLinks").classList.remove("active");
+    }
+
+    // Automatic current year
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
